@@ -21,12 +21,12 @@ public class PlayerController : MonoBehaviour
     {
         // Horizontal movement
         float inputX = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(inputX * speed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(inputX * speed, rb.linearVelocity.y);
 
         // Jump
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
     }
 
